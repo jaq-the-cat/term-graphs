@@ -18,7 +18,7 @@ void plot_line(int x0, int y0, int x1, int y1) {
     int err = dx + dy;  /* error value e_xy */
     int e2;
     while (1) {   /* loop */
-        mvaddch(x0, y0, 'x');
+        mvaddch(y0, x0*2, 'x');
         if (x0 == x1 && y0 == y1) break;
         e2 = 2*err;
         if (e2 >= dy) { /* e_xy+e_x > 0 */
@@ -39,6 +39,6 @@ void Gdraw_line(LineData d, const size_t len_d) {
     for (int i=0; i<len_d-1; i++) {
         int x0 = lines[i][0].x, y0 = lines[i][0].y;
         int x1 = lines[i][1].x, y1 = lines[i][1].y;
-        plot_line(y0, x0, y1, x1);
+        plot_line(x0, y0, x1, y1);
     }
 }
