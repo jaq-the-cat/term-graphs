@@ -1,0 +1,5 @@
+-SOURCE
+src/main.c
+src/render.c
+-LIBS
+ncurses
