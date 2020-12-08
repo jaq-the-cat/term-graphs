@@ -1,5 +1,6 @@
 -SOURCE
 src/main.c
 src/render.c
+src/bar.c
 -LIBS
 ncurses

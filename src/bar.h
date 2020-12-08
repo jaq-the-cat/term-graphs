@@ -6,6 +6,9 @@
 #include "data.h"
 #include "render.h"
 
-void Gdraw_bar(Data, size_t);
+#define BAR_HEIGHT 30
+#define BAR_WIDTH 50
+
+void Gdraw_bar();
 
 #endif
