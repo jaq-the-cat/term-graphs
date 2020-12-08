@@ -1,11 +1,11 @@
 #include "line.h"
 #include <stdio.h>
 
-void make_lines(LineData d, Point lines[][2], const size_t len_d) {
+void make_lines(LineData d, Point lines[][2], const size_t len_d, int xg) {
     int x = 0;
     for (int i=0, j=0; i<len_d-1; i++, j++) {
         lines[j][0] = POINT(x, d[i]);
-        x += 6;
+        x += xg;
         lines[j][1] = POINT(x, d[i+1]);
     }
 }
@@ -32,9 +32,9 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-void Gdraw_line(LineData d, const size_t len_d) {
+void Gdraw_line(LineData d, const size_t len_d, int x_growth) {
     Point lines[len_d-1][2];
-    make_lines(d, lines, len_d);
+    make_lines(d, lines, len_d, x_growth);
 
     for (int i=0; i<len_d-1; i++) {
         int x0 = lines[i][0].x, y0 = lines[i][0].y;

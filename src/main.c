@@ -12,7 +12,7 @@ int main() {
         5,
         25,
     };
-    Gdraw_line(d, 4);
+    Gdraw_line(d, 4, 6);
     refresh();
     napms(3000);
 
