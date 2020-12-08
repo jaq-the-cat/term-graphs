@@ -37,6 +37,6 @@ void Gdraw_line(Point d[], const size_t len_d) {
     for (int i=0; i<len_d-1; i++) {
         int x0 = lines[i][0].x, y0 = lines[i][0].y;
         int x1 = lines[i][1].x, y1 = lines[i][1].y;
-        plot_line(x0, y0, x1, y1);
+        plot_line(y0, x0, y1, x1);
     }
 }
