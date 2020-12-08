@@ -14,7 +14,7 @@ typedef struct {
     int h;
 } Bar;
 
-void Gdraw_bar(Bar*, size_t);
+void Gdraw_bar(int, int, Bar*, size_t);
 
 // Constructors
 

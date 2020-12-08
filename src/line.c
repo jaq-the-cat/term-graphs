@@ -32,13 +32,30 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-void Gdraw_line(LineData d, const size_t len_d, int x_growth) {
+int get_h(LineData d, int len_d) {
+
+}
+
+void Gdraw_line(int gx, int gy, LineData d, const size_t len_d, int x_growth) {
     Point lines[len_d-1][2];
+
+    int line_h, line_w = len_d*x_growth;
+    for (int i=0; i<len_d; i++)
+        if (d[i] > line_h)
+            line_h = d[i];
+    line_h++;
+
     make_lines(d, lines, len_d, x_growth);
 
+    // draw lines
+    for (int y=gy; y<line_h+gy; y++)
+        mvaddch(y, gx, '+');
+    for (int x=gx; x<line_w*2+gx; x+=2)
+        mvaddstr(line_h+gy, x, "+ ");
+
     for (int i=0; i<len_d-1; i++) {
-        int x0 = lines[i][0].x, y0 = lines[i][0].y;
-        int x1 = lines[i][1].x, y1 = lines[i][1].y;
+        int x0 = lines[i][0].x + gx + 1, y0 = lines[i][0].y + gy;
+        int x1 = lines[i][1].x + gx + 1, y1 = lines[i][1].y + gy;
         plot_line(x0, y0, x1, y1);
     }
 }

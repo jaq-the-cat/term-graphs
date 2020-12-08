@@ -1,8 +1,6 @@
 #include "bar.h"
 
-void Gdraw_bar(Bar* d, size_t len_b) {
-
-    int gy = 1, gx = 1;
+void Gdraw_bar(int gx, int gy, Bar* d, size_t len_b) {
 
     // draw lines
     for (int y=gy; y<BAR_HEIGHT+gy; y++)

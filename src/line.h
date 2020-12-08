@@ -6,9 +6,12 @@
 #include "data.h"
 #include "render.h"
 
+#define LINE_HEIGHT 30
+#define LINE_WIDTH 40
+
 typedef int LineData[];
 
-void Gdraw_line(LineData, size_t, int);
+void Gdraw_line(int, int, LineData, size_t, int);
 
 
 // Constructors
