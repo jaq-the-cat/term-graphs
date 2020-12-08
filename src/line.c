@@ -5,7 +5,7 @@ void make_lines(LineData d, Point lines[][2], const size_t len_d) {
     int x = 0;
     for (int i=0, j=0; i<len_d-1; i++, j++) {
         lines[j][0] = POINT(x, d[i]);
-        x += 10;
+        x += 5;
         lines[j][1] = POINT(x, d[i+1]);
     }
 }
