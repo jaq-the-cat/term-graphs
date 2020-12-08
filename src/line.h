@@ -6,7 +6,10 @@
 #include "data.h"
 #include "render.h"
 
-void Gdraw_line(Point[], size_t);
+typedef int LineData[];
+
+void Gdraw_line(LineData, size_t);
+
 
 // Constructors
 #define LINE(x1, y1, x2, y2) (Data) { POINT(x1, y1), POINT(x2, y2) }

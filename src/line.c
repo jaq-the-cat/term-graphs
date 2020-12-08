@@ -1,10 +1,12 @@
 #include "line.h"
 #include <stdio.h>
 
-void make_lines(Point d[], Point lines[][2], const size_t len_d) {
+void make_lines(LineData d, Point lines[][2], const size_t len_d) {
+    int x = 0;
     for (int i=0, j=0; i<len_d-1; i++, j++) {
-        lines[j][0] = d[i];
-        lines[j][1] = d[i+1];
+        lines[j][0] = POINT(x, d[i]);
+        x += 10;
+        lines[j][1] = POINT(x, d[i+1]);
     }
 }
 
@@ -30,7 +32,7 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-void Gdraw_line(Point d[], const size_t len_d) {
+void Gdraw_line(LineData d, const size_t len_d) {
     Point lines[len_d-1][2];
     make_lines(d, lines, len_d);
 
