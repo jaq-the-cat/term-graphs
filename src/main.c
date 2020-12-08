@@ -6,7 +6,13 @@
 int main() {
     GWin scr = Ginit();
 
-    Gdraw_line(LINE(1, 1, 5, 5), 4);
+    Point d[] = {
+        POINT(1, 1),
+        POINT(5, 10),
+        POINT(10, 5),
+        POINT(15, 15),
+    };
+    Gdraw_line(d, 4);
     refresh();
     napms(3000);
 
