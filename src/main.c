@@ -5,7 +5,8 @@
 int main() {
     GWin scr = Ginit();
 
-    Gdraw_bar();
+    Bar d[] = {BAR(1, 10), BAR(4, 5)};
+    Gdraw_bar(d, 2);
     refresh();
     napms(3000);
 

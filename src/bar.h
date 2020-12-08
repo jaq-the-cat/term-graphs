@@ -9,6 +9,15 @@
 #define BAR_HEIGHT 30
 #define BAR_WIDTH 50
 
-void Gdraw_bar();
+typedef struct {
+    int x;
+    int h;
+} Bar;
+
+void Gdraw_bar(Bar*, size_t);
+
+// Constructors
+
+#define BAR(x, h) (Bar) {x, h}
 
 #endif
