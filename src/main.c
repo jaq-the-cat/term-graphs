@@ -8,9 +8,9 @@ int main() {
 
     LineData d = {
         1,
-        10,
-        5,
         15,
+        5,
+        25,
     };
     Gdraw_line(d, 4);
     refresh();
