@@ -8,8 +8,7 @@
 
 typedef Point Data[];
 
-void Gdraw_line(Data d, size_t len_d) {
-}
+void Gdraw_line(Data, size_t);
 
 // Constructors
 #define LINE(x1, y1, x2, y2) (Data) { POINT(x1, y1), POINT(x2, y2) }
