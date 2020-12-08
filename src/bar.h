@@ -6,15 +6,7 @@
 #include "data.h"
 #include "render.h"
 
-#define BAR_HEIGHT 30
-#define BAR_WIDTH 50
-
-typedef struct {
-    int x;
-    int h;
-} Bar;
-
-void Gdraw_bar(int, int, Bar*, size_t);
+void Gdraw_bar(int, int, int[], size_t);
 
 // Constructors
 

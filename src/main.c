@@ -13,6 +13,15 @@ int main() {
         25,
     };
     Gdraw_line(1, 1, d, 4, 6);
+
+    int bar[] = {
+        5,
+        10,
+        2,
+        25,
+    };
+    Gdraw_bar(1, 30, bar, 4);
+
     refresh();
     napms(3000);
 

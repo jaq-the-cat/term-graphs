@@ -32,10 +32,6 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-int get_h(LineData d, int len_d) {
-
-}
-
 void Gdraw_line(int gx, int gy, LineData d, const size_t len_d, int x_growth) {
     Point lines[len_d-1][2];
 
