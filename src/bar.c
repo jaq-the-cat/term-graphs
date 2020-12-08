@@ -12,5 +12,5 @@ void Gdraw_bar(Bar* d, size_t len_b) {
     
     for (int i=0; i<len_b; i++)
         for (int h=0; h<d[i].h; h++)
-            mvaddstr(BAR_HEIGHT+gy-1-h, d[i].x+gx+1, "[]");
+            mvaddstr(BAR_HEIGHT+gy-1-h, (d[i].x)*3, "[ ]");
 }
