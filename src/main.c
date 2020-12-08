@@ -12,15 +12,7 @@ int main() {
         5,
         25,
     };
-    Gdraw_line(1, 1, d, 4, 6);
-
-    int bar[] = {
-        5,
-        10,
-        2,
-        25,
-    };
-    Gdraw_bar(1, 30, bar, 4);
+    Gdraw_line(1, 1, d, 4, 6, "X label", "Y label");
 
     refresh();
     napms(3000);

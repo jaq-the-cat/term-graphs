@@ -32,7 +32,7 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-void Gdraw_line(int gx, int gy, LineData d, const size_t len_d, int x_growth) {
+void Gdraw_line(int gx, int gy, LineData d, const size_t len_d, int x_growth, char *xlabel, char *ylabel) {
     Point lines[len_d-1][2];
 
     int line_h, line_w = len_d*x_growth;
@@ -40,6 +40,12 @@ void Gdraw_line(int gx, int gy, LineData d, const size_t len_d, int x_growth) {
         if (d[i] > line_h)
             line_h = d[i];
     line_h++;
+
+    mvaddstr(line_h+2, gx, xlabel);
+    mvaddstr(line_h+2, gx + strlen(xlabel) + 1, "-^");
+    mvaddstr(line_h, gx + 2, "<-");
+    mvaddstr(line_h, gx + 5, ylabel);
+    /*gx += 2 + strlen(xlabel);*/
 
     make_lines(d, lines, len_d, x_growth);
 

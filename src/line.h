@@ -11,7 +11,7 @@
 
 typedef int LineData[];
 
-void Gdraw_line(int, int, LineData, size_t, int);
+void Gdraw_line(int, int, LineData, size_t, int, char*, char*);
 
 
 // Constructors
