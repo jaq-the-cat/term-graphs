@@ -8,9 +8,9 @@ int main() {
 
     Point d[] = {
         POINT(1, 1),
-        POINT(5, 10),
-        POINT(10, 5),
-        POINT(15, 15),
+        POINT(10, 10),
+        POINT(20, 5),
+        POINT(30, 15),
     };
     Gdraw_line(d, 4);
     refresh();
