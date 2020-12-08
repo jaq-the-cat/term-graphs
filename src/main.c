@@ -8,6 +8,7 @@ int main() {
     Gdraw_bar();
     refresh();
     napms(3000);
+
     end:
     Gend(scr);
     return 0;
