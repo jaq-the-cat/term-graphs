@@ -10,13 +10,13 @@ int f(int x) {
 int main() {
     GWin scr = Ginit();
 
-    int ld[30];
-    for (int x=1; x<30; x++)
+    const int ld_len = 60;
+    int ld[ld_len];
+    for (int x=1; x<ld_len; x++)
         ld[x] = f(x);
     Gdraw_line(
-            2, 1, 40, 20,          // graph transform
-            ld, 30,            // data
-            1,                 // x growth
+            2, 1, 100, 50,     // graph transform
+            ld, ld_len,        // data
             "Cock over time"); // label
 
     Bar bd[] = {
@@ -27,7 +27,7 @@ int main() {
         BAR(2,  "Mugs"),
     };
     Gdraw_bar(
-            2, 22, 10, // graph transform
+            2, 52, 10, // graph transform
             bd, 5);    // data
 
     refresh();
