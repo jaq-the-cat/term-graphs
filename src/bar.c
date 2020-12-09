@@ -10,7 +10,7 @@ char* make_bar(char* label, int w) {
     return bar;
 }
 
-int get_trans_h(int actual_h, int gh, int h) {
+int get_trans_h(float actual_h, float gh, float h) {
     return h / (actual_h / gh);
 }
 
@@ -38,14 +38,8 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
     for (int i=0; i<len_b; i++) {
         bar_w = strlen(d[i].label) + 4;
 
-        char e[25];
         ah = get_trans_h(max_bar_h, gh, d[i].h);
-        sprintf(e, "%d ", d[i].h / (max_bar_h / gh));
-        mvaddstr(0, 0, e);
-        sprintf(e, "%d ", d[i].h);
-        mvaddstr(1, 0, e);
-        sprintf(e, "%d %d  ", max_bar_h, gh);
-        mvaddstr(2, 0, e);
+        if (ah < 1) ah = 1;
         // draw bar sections
         for (int h=0; h<ah; h++) {
             mvaddch(ah+gy-1-h, x, '[');
