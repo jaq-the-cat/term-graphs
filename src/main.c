@@ -3,8 +3,10 @@
 #include "graphs/bar.h"
 #include "graphs/line.h"
 
+#include <math.h>
+
 int f(int x) {
-    return x*x;
+    return sin((double) x);
 }
 
 int main() {
