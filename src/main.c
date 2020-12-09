@@ -4,13 +4,13 @@
 #include "graphs/line.h"
 
 int f(int x) {
-    return x*x;
+    return rand();
 }
 
 int main() {
     GWin scr = Ginit();
 
-    const int ld_len = 60;
+    const int ld_len = 50;
     int ld[ld_len];
     for (int x=1; x<ld_len; x++)
         ld[x] = f(x);
