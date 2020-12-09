@@ -15,11 +15,11 @@ int main() {
     /*Gdraw_line(1, 1, d, 4, 6, "X label", "Y label");*/
 
     Bar d[] = {
-        BAR(10, "Label 1"),
-        BAR(15, "Label 2"),
-        BAR(8, "Label 3"),
-        BAR(5, "Label 4"),
-        BAR(2, "Label 5"),
+        BAR(10, "Pyjamas"),
+        BAR(15, "Cereal"),
+        BAR(8, "Violins"),
+        BAR(5, "Cars"),
+        BAR(2, "Mugs"),
     };
     Gdraw_bar(1, 1, d, 5);
 
