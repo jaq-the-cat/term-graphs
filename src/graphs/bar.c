@@ -35,12 +35,12 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
 
         // draw bar sections
         for (int h=0; h<ah; h++) {
-            mvaddch(ah+gy-1-h, x, '[');
-            mvaddch(ah+gy-1-h, x + bar_w-1, ']');
+            mvaddch(gy+gh-1-h, x, '[');
+            mvaddch(gy+gh-1-h, x + bar_w-1, ']');
         }
 
         // draw label
-        mvaddstr(ah+gy-1, x + 2, d[i].label);
+        mvaddstr(gy+gh-1, x + 2, d[i].label);
 
         x += bar_w + gap;
     }
