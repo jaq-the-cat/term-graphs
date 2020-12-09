@@ -12,7 +12,7 @@ int main() {
         5,
         25,
     };
-    Gdraw_line(2, 1, 20, ld, 4, 6, "X label", "Y label");
+    Gdraw_line(2, 1, 20, ld, 4, 6, "Cock over time");
 
     Bar bd[] = {
         BAR(10, "Pyjamas"),
