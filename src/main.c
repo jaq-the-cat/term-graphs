@@ -4,7 +4,7 @@
 #include "graphs/line.h"
 
 int f(int x) {
-    return x * 2;
+    return x*x;
 }
 
 int main() {
@@ -14,7 +14,7 @@ int main() {
     for (int x=1; x<30; x++)
         ld[x] = f(x);
     Gdraw_line(
-            2, 1, 20,          // graph transform
+            2, 1, 40, 20,          // graph transform
             ld, 30,            // data
             1,                 // x growth
             "Cock over time"); // label

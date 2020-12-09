@@ -32,24 +32,22 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-void Gdraw_line(int gx, int gy, int gh, LineData d, const size_t len_d, int x_growth, char *title) {
+void Gdraw_line(int gx, int gy, int gw, int gh, LineData d, const size_t len_d, int x_growth, char *title) {
     Point lines[len_d-1][2];
 
-    int line_h, line_w = len_d*x_growth;
+    int graph_h, graph_w = len_d*x_growth;
     for (int i=0; i<len_d; i++)
-        if (d[i] > line_h)
-            line_h = d[i];
-
+        if (d[i] > graph_h)
+            graph_h = d[i];
     gh--;
+    graph_lines(gy, gh, gx, (gw+2)*2);
 
-    graph_lines(gy, gh, gx, len_d*x_growth*2 - 1);
     make_lines(d, lines, len_d, x_growth);
-
     for (int i=0; i<len_d-1; i++) {
-        int x0 = lines[i][0].x + gx;
-        int y0 = gh - trans_d(line_h, gh-1, lines[i][0].y) + gy - 1;
-        int x1 = lines[i][1].x + gx;
-        int y1 = gh - trans_d(line_h, gh-1, lines[i][1].y) + gy - 1;
+        int x0 = trans_d(graph_w, gw-1, lines[i][0].x) + gx + 1;
+        int y0 = gh - trans_d(graph_h, gh-1, lines[i][0].y) + gy - 1;
+        int x1 = trans_d(graph_w, gw-1, lines[i][1].x) + gx + 1;
+        int y1 = gh - trans_d(graph_h, gh-1, lines[i][1].y) + gy - 1;
         plot_line(x0, y0, x1, y1);
     }
 
