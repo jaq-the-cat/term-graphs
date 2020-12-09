@@ -47,9 +47,9 @@ void Gdraw_line(int gx, int gy, int gh, LineData d, const size_t len_d, int x_gr
 
     for (int i=0; i<len_d-1; i++) {
         int x0 = lines[i][0].x + gx;
-        int y0 = gh - trans_d(line_h, gh-1, lines[i][0].y) + gy;
+        int y0 = gh - trans_d(line_h, gh-1, lines[i][0].y) + gy - 1;
         int x1 = lines[i][1].x + gx;
-        int y1 = gh - trans_d(line_h, gh-1, lines[i][1].y) + gy;
+        int y1 = gh - trans_d(line_h, gh-1, lines[i][1].y) + gy - 1;
         plot_line(x0, y0, x1, y1);
     }
 
