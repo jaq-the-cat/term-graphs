@@ -20,13 +20,8 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
     }
     graph_w++; // right padding
 
+    graph_lines(gy, gh, gx, graph_w);
 
-    // draw lines
-    for (int y=gy; y<gh+gy; y++)
-        mvaddch(y, gx, '+');
-    for (int x=gx; x<graph_w+gx; x+=2)
-        mvaddstr(gh+gy, x, "+ ");
-    
     const int gap = 1;
     int x = gx + gap*2;
     int bar_w;

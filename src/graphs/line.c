@@ -48,11 +48,7 @@ void Gdraw_line(int gx, int gy, int gh, LineData d, const size_t len_d, int x_gr
 
     make_lines(d, lines, len_d, x_growth);
 
-    // draw lines
-    for (int y=gy; y<gh+gy; y++)
-        mvaddch(y, gx, '+');
-    for (int x=gx; x<gh*2+gx+2; x+=2)
-        mvaddstr(gh+gy, x, "+ ");
+    graph_lines(gy, gh, gx, len_d*2*x_growth-3*2);
 
     for (int i=0; i<len_d-1; i++) {
         int x0 = lines[i][0].x + gx;
