@@ -14,17 +14,17 @@ int main() {
     /*};*/
     /*Gdraw_line(1, 1, d, 4, 6, "X label", "Y label");*/
 
-    int d[] = {
-        10,
-        15,
-        8,
-        5,
-        2,
+    Bar d[] = {
+        BAR(10, "Label 1"),
+        BAR(15, "Label 2"),
+        BAR(8, "Label 3"),
+        BAR(5, "Label 4"),
+        BAR(2, "Label 5"),
     };
     Gdraw_bar(1, 1, d, 5);
 
     refresh();
-    napms(3000);
+    getch();
 
     end:
     Gend(scr);

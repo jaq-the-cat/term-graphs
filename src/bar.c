@@ -1,10 +1,10 @@
 #include "bar.h"
 
-void Gdraw_bar(int gx, int gy, int d[], size_t len_b) {
+void Gdraw_bar(int gx, int gy, Bar d[], size_t len_b) {
     int bar_h = 0;
     for (int i=0; i<len_b; i++)
-        if (d[i] > bar_h)
-            bar_h = d[i];
+        if (d[i].h > bar_h)
+            bar_h = d[i].h;
     int bar_w = len_b * 5;
 
     // draw lines
@@ -14,9 +14,12 @@ void Gdraw_bar(int gx, int gy, int d[], size_t len_b) {
         mvaddstr(bar_h+gy, x, "+ ");
     
     int x = 0;
+    int ly = 0;
     for (int i=0; i<len_b; i++) {
-        for (int h=0; h<d[i]; h++)
+        for (int h=0; h<d[i].h; h++)
             mvaddstr(bar_h+gy-1-h, x*8 + 5, "[    ]");
-        x += 1;
+        mvaddstr(bar_h+2+ly, x*8 + 5, d[i].label);
+        ly++;
+        x++;
     }
 }

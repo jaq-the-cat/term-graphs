@@ -6,10 +6,15 @@
 #include "data.h"
 #include "render.h"
 
-void Gdraw_bar(int, int, int[], size_t);
+typedef struct {
+    int h;
+    char *label;
+} Bar;
+
+void Gdraw_bar(int, int, Bar[], size_t);
 
 // Constructors
 
-#define BAR(x, h) (Bar) {x, h}
+#define BAR(h, label) (Bar) {h, label}
 
 #endif
