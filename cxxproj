@@ -1,7 +1,7 @@
 -SOURCE
 src/main.c
 src/render.c
-src/bar.c
-src/line.c
+src/graphs/bar.c
+src/graphs/line.c
 -LIBS
 ncurses

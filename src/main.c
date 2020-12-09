@@ -1,7 +1,7 @@
 #include "libs.h"
 #include "render.h"
-#include "bar.h"
-#include "line.h"
+#include "graphs/bar.h"
+#include "graphs/line.h"
 
 int main() {
     GWin scr = Ginit();
@@ -12,7 +12,7 @@ int main() {
         5,
         25,
     };
-    Gdraw_line(1, 1, ld, 4, 6, "X label", "Y label");
+    Gdraw_line(1, 1, 20, ld, 4, 6, "X label", "Y label");
 
     Bar bd[] = {
         BAR(10, "Pyjamas"),

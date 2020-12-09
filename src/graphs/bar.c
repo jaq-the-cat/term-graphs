@@ -10,7 +10,7 @@ char* make_bar(char* label, int w) {
     return bar;
 }
 
-int get_trans_h(float actual_h, float gh, float h) {
+int bar_trans_h(float actual_h, float gh, float h) {
     return h / (actual_h / gh);
 }
 
@@ -39,7 +39,7 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
         bar_w = strlen(d[i].label) + 4;
 
         // get translated bar height
-        ah = get_trans_h(max_bar_h, gh, d[i].h);
+        ah = bar_trans_h(max_bar_h, gh, d[i].h);
         if (ah < 1) ah = 1;
 
         // draw bar sections

@@ -32,7 +32,11 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-void Gdraw_line(int gx, int gy, LineData d, const size_t len_d, int x_growth, char *xlabel, char *ylabel) {
+int line_trans_h(float actual_h, float gh, float h) {
+    return h / (actual_h / gh);
+}
+
+void Gdraw_line(int gx, int gy, int gh, LineData d, const size_t len_d, int x_growth, char *xlabel, char *ylabel) {
     Point lines[len_d-1][2];
 
     int line_h, line_w = len_d*x_growth;
@@ -41,23 +45,24 @@ void Gdraw_line(int gx, int gy, LineData d, const size_t len_d, int x_growth, ch
             line_h = d[i];
     line_h++;
 
-    mvaddstr(line_h+2, gx, xlabel);
-    mvaddstr(line_h+2, gx + strlen(xlabel) + 1, "-^");
-    mvaddstr(line_h, gx + 2, "<-");
-    mvaddstr(line_h, gx + 5, ylabel);
-    /*gx += 2 + strlen(xlabel);*/
+    mvaddstr(gh+2, gx, xlabel);
+    mvaddstr(gh+2, gx + strlen(xlabel) + 1, "-^");
+    mvaddstr(gh, gx + 2, "<-");
+    mvaddstr(gh, gx + 5, ylabel);
 
     make_lines(d, lines, len_d, x_growth);
 
     // draw lines
-    for (int y=gy; y<line_h+gy; y++)
+    for (int y=gy; y<gh+gy; y++)
         mvaddch(y, gx, '+');
-    for (int x=gx; x<line_w*2+gx; x+=2)
-        mvaddstr(line_h+gy, x, "+ ");
+    for (int x=gx; x<gh*2+gx; x+=2)
+        mvaddstr(gh+gy, x, "+ ");
 
     for (int i=0; i<len_d-1; i++) {
-        int x0 = lines[i][0].x + gx + 1, y0 = lines[i][0].y + gy;
-        int x1 = lines[i][1].x + gx + 1, y1 = lines[i][1].y + gy;
+        int x0 = lines[i][0].x + gx;
+        int y0 = line_trans_h(line_h, gh, lines[i][0].y) + gy;
+        int x1 = lines[i][1].x + gx;
+        int y1 = line_trans_h(line_h, gh, lines[i][1].y) + gy;
         plot_line(x0, y0, x1, y1);
     }
 }

@@ -1,10 +1,10 @@
 #ifndef BAR_H
 #define BAR_H
 
-#include "libs.h"
+#include "../libs.h"
 
-#include "data.h"
-#include "render.h"
+#include "../data.h"
+#include "../render.h"
 
 typedef struct {
     int h;
