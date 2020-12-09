@@ -2,9 +2,10 @@
 #include "generic.h"
 
 void make_lines(LineData d, Point lines[][2], const size_t len_d) {
-    for (int i=0; i<len_d-1; i++) {
-        lines[i][0] = POINT(i, d[i]);
-        lines[i][1] = POINT(i, d[i+1]);
+    for (int i=0, x=0; i<len_d-1; i++) {
+        lines[i][0] = POINT(x, d[i]);
+        x++;
+        lines[i][1] = POINT(x, d[i+1]);
     }
 }
 
