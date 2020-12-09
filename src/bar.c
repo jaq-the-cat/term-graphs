@@ -1,11 +1,11 @@
 #include "bar.h"
 
 void Gdraw_bar(int gx, int gy, int d[], size_t len_b) {
-    int bar_h;
+    int bar_h = 0;
     for (int i=0; i<len_b; i++)
         if (d[i] > bar_h)
             bar_h = d[i];
-    int bar_w = len_b * 9;
+    int bar_w = len_b * 5;
 
     // draw lines
     for (int y=gy; y<bar_h+gy; y++)
