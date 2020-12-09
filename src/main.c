@@ -21,9 +21,9 @@ int main() {
     Bar bd[] = {
         BAR(10, "Pyjamas"),
         BAR(15, "Cereal"),
-        BAR(8, "Violins"),
-        BAR(5, "Cars"),
-        BAR(2, "Mugs"),
+        BAR(8,  "Violins"),
+        BAR(5,  "Cars"),
+        BAR(2,  "Mugs"),
     };
     Gdraw_bar(
             2, 22, 10, // graph transform
