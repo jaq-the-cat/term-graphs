@@ -21,7 +21,7 @@ int main() {
         BAR(5, "Cars"),
         BAR(2, "Mugs"),
     };
-    Gdraw_bar(1, 32, 10, bd, 5);
+    Gdraw_bar(1, 24, 10, bd, 5);
 
     refresh();
     getch();
