@@ -3,19 +3,20 @@
 #include "graphs/bar.h"
 #include "graphs/line.h"
 
+int f(int x) {
+    return x*x;
+}
+
 int main() {
     GWin scr = Ginit();
 
-    LineData ld = {
-        1,
-        15,
-        5,
-        25,
-    };
+    int ld[10];
+    for (int x=2; x<10; x++)
+        ld[x] = f(x);
     Gdraw_line(
             2, 1, 20,          // graph transform
-            ld, 4,             // data
-            4,                 // x growth
+            ld, 10,            // data
+            3,                 // x growth
             "Cock over time"); // label
 
     Bar bd[] = {

@@ -30,7 +30,7 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
         bar_w = strlen(d[i].label) + 2;
 
         // get translated bar height
-        ah = trans_h(max_bar_h, gh, d[i].h);
+        ah = trans_d(max_bar_h, gh, d[i].h);
         if (ah < 1) ah = 1;
 
         // draw bar sections

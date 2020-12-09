@@ -1,7 +1,7 @@
 #include "generic.h"
 
-int trans_h(float actual_h, float gh, float h) {
-    return h / (actual_h / gh);
+int trans_d(float actual_d, float graph_d, float d) {
+    return d / (actual_d / graph_d);
 }
 
 void graph_lines(int gy, int gh, int gx, int graph_w) {

@@ -3,7 +3,7 @@
 
 #include <ncurses.h>
 
-int trans_h(float, float, float);
+int trans_d(float, float, float);
 void graph_lines(int, int, int, int);
 
 #endif
