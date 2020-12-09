@@ -4,7 +4,6 @@ GWin Ginit() {
     initscr();
     cbreak();
     noecho();
-    nodelay(stdscr, true);
     return stdscr;
 }
 
