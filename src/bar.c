@@ -11,20 +11,19 @@ char* make_bar(char* label, int w) {
 
 void Gdraw_bar(int gx, int gy, Bar d[], size_t len_b) {
     int l;
-    int max_bar_w = 0, max_bar_h = 0;
+    int graph_w = 2, max_bar_h = 0;
     for (int i=0; i<len_b; i++) {
         if (d[i].h > max_bar_h)
             max_bar_h = d[i].h;
-        if ((l = strlen(d[i].label)) > max_bar_w)
-            max_bar_w = l;
+        graph_w += strlen(d[i].label) + 5;
     }
-
-    max_bar_h++;
+    graph_w++; // right padding
+    max_bar_h++; // top padding
 
     // draw lines
     for (int y=gy; y<max_bar_h+gy; y++)
         mvaddch(y, gx, '+');
-    for (int x=gx; x<max_bar_w*2+gx; x+=2)
+    for (int x=gx; x<graph_w+gx; x+=2)
         mvaddstr(max_bar_h+gy, x, "+ ");
     
     const int gap = 1;
