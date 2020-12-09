@@ -27,7 +27,7 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
     int bar_w;
     int ah;
     for (int i=0; i<len_b; i++) {
-        bar_w = strlen(d[i].label) + 4;
+        bar_w = strlen(d[i].label) + 2;
 
         // get translated bar height
         ah = trans_h(max_bar_h, gh, d[i].h);
@@ -40,7 +40,7 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
         }
 
         // draw label
-        mvaddstr(gy+gh-1, x + 2, d[i].label);
+        mvaddstr(gy+gh-1, ++x, d[i].label);
 
         x += bar_w + gap;
     }
