@@ -1,5 +1,5 @@
 #include "line.h"
-#include <stdio.h>
+#include "generic.h"
 
 void make_lines(LineData d, Point lines[][2], const size_t len_d, int xg) {
     int x = 0;
@@ -32,10 +32,6 @@ void plot_line(int x0, int y0, int x1, int y1) {
     }
 }
 
-int line_trans_h(float actual_h, float gh, float h) {
-    return h / (actual_h / gh);
-}
-
 void Gdraw_line(int gx, int gy, int gh, LineData d, const size_t len_d, int x_growth, char *xlabel, char *ylabel) {
     Point lines[len_d-1][2];
 
@@ -60,9 +56,9 @@ void Gdraw_line(int gx, int gy, int gh, LineData d, const size_t len_d, int x_gr
 
     for (int i=0; i<len_d-1; i++) {
         int x0 = lines[i][0].x + gx;
-        int y0 = line_trans_h(line_h, gh-1, lines[i][0].y) + gy;
+        int y0 = trans_h(line_h, gh-1, lines[i][0].y) + gy;
         int x1 = lines[i][1].x + gx;
-        int y1 = line_trans_h(line_h, gh-1, lines[i][1].y) + gy;
+        int y1 = trans_h(line_h, gh-1, lines[i][1].y) + gy;
         plot_line(x0, y0, x1, y1);
     }
 }

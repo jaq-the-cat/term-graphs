@@ -1,6 +1,7 @@
 -SOURCE
 src/main.c
 src/render.c
+src/graphs/generic.c
 src/graphs/bar.c
 src/graphs/line.c
 -LIBS
