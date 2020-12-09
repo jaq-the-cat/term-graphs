@@ -25,15 +25,18 @@ void Gdraw_bar(int gx, int gy, Bar d[], size_t len_b) {
     
     const int gap = 1;
     int x = gx + gap*2;
+    int bar_width;
     for (int i=0; i<len_b; i++) {
-        int w = strlen(d[i].label) + 4;
+        bar_width = strlen(d[i].label) + 4;
+
         // draw bar sections
         for (int h=0; h<d[i].h; h++) {
             mvaddch(bar_h+gy-1-h, x, '[');
-            mvaddch(bar_h+gy-1-h, x+w-1, ']');
+            mvaddch(bar_h+gy-1-h, x + bar_width-1, ']');
         }
+
         // draw label
         mvaddstr(bar_h+gy-1, x + 2, d[i].label);
-        x += w + gap;
+        x += bar_width + gap;
     }
 }
