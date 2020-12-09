@@ -42,7 +42,7 @@ void Gdraw_line(int gx, int gy, int gh, LineData d, const size_t len_d, int x_gr
 
     gh--;
 
-    graph_lines(gy, gh, gx, len_d*2*x_growth-3*2);
+    graph_lines(gy, gh, gx, len_d*x_growth*2 - 1);
     make_lines(d, lines, len_d, x_growth);
 
     for (int i=0; i<len_d-1; i++) {
