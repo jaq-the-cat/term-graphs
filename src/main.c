@@ -14,7 +14,8 @@ int main() {
     };
     Gdraw_line(
             2, 1, 20, // graph transform
-            ld, 4, 4, // data
+            ld, 4, // data
+            4, // x growth
             "Cock over time"); // label
 
     Bar bd[] = {
