@@ -12,7 +12,7 @@ int main() {
         5,
         25,
     };
-    Gdraw_line(1, 1, 20, ld, 4, 6, "X label", "Y label");
+    Gdraw_line(2, 1, 20, ld, 4, 6, "X label", "Y label");
 
     Bar bd[] = {
         BAR(10, "Pyjamas"),
@@ -21,7 +21,7 @@ int main() {
         BAR(5, "Cars"),
         BAR(2, "Mugs"),
     };
-    Gdraw_bar(1, 21, 10, bd, 5);
+    Gdraw_bar(2, 22, 10, bd, 5);
 
     refresh();
     getch();
