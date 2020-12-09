@@ -16,7 +16,7 @@ void Gdraw_bar(int gx, int gy, int gh, Bar d[], size_t len_b) {
     for (int i=0; i<len_b; i++) {
         if (d[i].h > max_bar_h)
             max_bar_h = d[i].h;
-        graph_w += strlen(d[i].label) + 5;
+        graph_w += strlen(d[i].label) + 4;
     }
     graph_w++; // right padding
 
