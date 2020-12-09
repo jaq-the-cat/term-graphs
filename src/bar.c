@@ -23,14 +23,16 @@ void Gdraw_bar(int gx, int gy, Bar d[], size_t len_b) {
     for (int x=gx; x<bar_w*2+gx; x+=2)
         mvaddstr(bar_h+gy, x, "+ ");
     
-    char *bar;
     const int gap = 1;
     int x = gx + gap*2;
-    for (int i=0; i<len_b; i++, free(bar)) {
+    for (int i=0; i<len_b; i++) {
         int w = strlen(d[i].label) + 4;
-        bar = make_bar(d[i].label, w);
-        for (int h=0; h<d[i].h; h++)
-            mvaddstr(bar_h+gy-1-h, x, bar);
+        // draw bar sections
+        for (int h=0; h<d[i].h; h++) {
+            mvaddch(bar_h+gy-1-h, x, '[');
+            mvaddch(bar_h+gy-1-h, x+w-1, ']');
+        }
+        // draw label
         mvaddstr(bar_h+gy-1, x + 2, d[i].label);
         x += w + gap;
     }
