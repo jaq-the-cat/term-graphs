@@ -6,4 +6,3 @@ src/graphs/bar.c
 src/graphs/line.c
 -LIBS
 ncurses
-m
